@@ -43,8 +43,8 @@ const sizeMap = {
 type LogoSize = keyof typeof sizeMap
 
 // ─── Inline SVG gem mark ───────────────────────────────────────────────────────
-// Using fixed brand fills so the gem looks crisp in any colour-scheme.
-// Dark-mode enhancement is handled by a CSS drop-shadow filter on the wrapper.
+// Brand fills: Deep Indigo (#3B3A96) → Ocean Teal (#1AB6B6)
+// Works on both light and dark backgrounds; dark-mode glow handled via CSS.
 function GemIcon({
   px,
   className,
@@ -63,65 +63,65 @@ function GemIcon({
       className={className}
       {...rest}
     >
-      {/* outer shell – warm gold */}
+      {/* outer shell – Deep Indigo */}
       <path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M11.9988 1.62363L27.4976 0L42.9975 1.62363L54.9974 17.5856L27.4987 49.3174L0 17.5856L11.9988 1.62363Z"
-        fill="#FDB300"
+        fill="#3B3A96"
       />
-      {/* left & right deep facets – burnt orange */}
+      {/* left & right deep facets – Darkest Indigo */}
       <path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M11.1387 17.7783L27.4987 49.3182L0 17.7783H11.1387Z"
-        fill="#EA6C00"
+        fill="#2A2975"
       />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M43.8623 17.7783L27.5013 49.3182L55 17.7783H43.8623Z"
-        fill="#EA6C00"
+        fill="#2A2975"
       />
-      {/* lower-centre facet – amber */}
+      {/* lower-centre facet – Ocean Teal */}
       <path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M10.8867 17.7783H43.5416L27.2141 49.3182L10.8867 17.7783Z"
-        fill="#FDAD00"
+        fill="#1AB6B6"
       />
-      {/* upper-left & upper-right crown facets – bright yellow */}
+      {/* upper-left & upper-right crown facets – Mid Indigo */}
       <path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M26.9278 0L11.7305 1.64099L10.8867 17.7775L26.9278 0Z"
-        fill="#FDD231"
+        fill="#4F4EAF"
       />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M27.4941 0L42.6913 1.64099L43.5352 17.7775L27.4941 0Z"
-        fill="#FDD231"
+        fill="#4F4EAF"
       />
-      {/* far-left & far-right edge triangles – amber */}
+      {/* far-left & far-right edge triangles – Teal */}
       <path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M55 17.7781L42.9686 1.7207L43.832 17.7781H55Z"
-        fill="#FDAD00"
+        fill="#159E9E"
       />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M0 17.7771L12.0303 1.71973L11.1669 17.7771H0Z"
-        fill="#FDAD00"
+        fill="#159E9E"
       />
-      {/* top table – pale champagne highlight */}
+      {/* top table – Light Teal highlight */}
       <path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M27.2259 0L10.8984 17.7775H43.5533L27.2259 0Z"
-        fill="#FEEEB7"
+        fill="#5CE0E0"
       />
     </svg>
   )
@@ -174,7 +174,7 @@ export function Logo({
         px={iconPx}
         className={cn(
           "shrink-0 transition-[filter] duration-300",
-          "dark:drop-shadow-[0_0_6px_rgba(253,179,0,0.35)]",
+          "dark:drop-shadow-[0_0_6px_rgba(26,182,182,0.4)]",
           iconClassName ?? containerClassName
         )}
       />
